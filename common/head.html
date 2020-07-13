@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/discourse-plugin" version="0.8.7">
+    api.registerConnectorClass('user-profile-primary', 'instagram-link', {
+      setupComponent(args, component) {
+        component.set('instagramLink', args.model.get('instagramLink'));
+      }
+    });
+    // api.registerConnectorClass('user-card-metadata', 'instagram-link', {
+    api.registerConnectorClass('user-card-after-metadata', 'instagram-link', {
+      setupComponent(args, component) {
+        component.set('instagramLink', args.user.get('instagramLink'));
+      }
+    });
+
+    api.modifyClass('model:user', {
+      instagramLink: function() {
+          const siteUserFields = Discourse.Site.currentProp('user_fields');
+          if (!Ember.isEmpty(siteUserFields)) {
+            const instagramUsernameField = siteUserFields.filterBy('name', 'Instagram')[0]
+            if (!instagramUsernameField) {
+              return null;
+            }
+            const userFieldId = instagramUsernameField.get('id');
+            const userFields = this.get('user_fields');
+            if (userFields && userFields[userFieldId]) {
+              const url = "https://instagram.com/" + userFields[userFieldId];
+              const link = "<a href='"+url+"' target='_blank'>@"+userFields[userFieldId]+"</a>";
+              const link_icon = "<a href='"+url+"' target='_blank' class='fa fa-instagram'>"+"</a>";
+              return Ember.Object.create({ link, name: instagramUsernameField.get('name') });
+            } else {
+              return null;
+            }
+          }
+      }.property('user_fields.@each.value')
+    });
+</script>
+
+<script type='text/x-handlebars' data-template-name='/connectors/user-profile-primary/instagram-link'>
+  {{#if instagramLink}}
+    <div class="public-user-fields">
+      <div class="public-user-field">
+        <span class="user-field-name">{{instagramLink.name}}</span>:
+        <span class="user-field-value">{{{instagramLink.link}}}</span>
+      </div>
+    </div>
+  {{/if}}
+</script>
+
+<!--user-card-metadata-->
+<!--<a href="{{instagramLink.url}}" class="fa fa-instagram"></a>-->
+<!--<span class="user-field-value">{{{instagramLink.link_icon}}}</span>-->
+
+<script type='text/x-handlebars' data-template-name='/connectors/user-card-after-metadata/instagram-link'>
+  {{#if instagramLink}}
+    <h3 class="user-card-public-field">
+        <span class="user-field-name">{{instagramLink.name}}</span>:
+        <span class="user-field-value">{{{instagramLink.link}}}</span>
+    </h3>
+  {{/if}}
+</script>
