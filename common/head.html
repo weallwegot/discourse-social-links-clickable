@@ -32,7 +32,7 @@
       instagramLink: function() {
           const siteUserFields = Discourse.Site.currentProp('user_fields');
           if (!Ember.isEmpty(siteUserFields)) {
-            const instagramUsernameField = siteUserFields.filterBy('name', 'Instagram')[0]
+            const instagramUsernameField = siteUserFields.filterBy('name', settings.instagram_custom_field_name)[0]
             if (!instagramUsernameField) {
               return null;
             }
@@ -47,12 +47,12 @@
               return null;
             }
           }
-      }.property('user_fields.@each.value');
+      }.property('user_fields.@each.value')
 
       linkedinLink: function() {
           const siteUserFields = Discourse.Site.currentProp('user_fields');
           if (!Ember.isEmpty(siteUserFields)) {
-            const linkedinLinkField = siteUserFields.filterBy('name', 'Linkedin Profile')[0]
+            const linkedinLinkField = siteUserFields.filterBy('name', settings.linkedin_custom_field_name)[0]
             if (!linkedinLinkField) {
               return null;
             }
