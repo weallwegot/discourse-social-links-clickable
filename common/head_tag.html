@@ -42,7 +42,7 @@
             var base = field.link.base || ''
             if (field.link.type === 'userField') {
                 var siteUserField = siteUserFields.filterBy('name', field.link.value)[0]
-                if (siteUserField && userFields[siteUserField.get('id')) {
+                if (siteUserField && userFields[siteUserField.get('id')]) {
                     Ember.set(field, 'href', base + (userFields[siteUserField.get('id')] || ''))
                 } else {
                     return null
