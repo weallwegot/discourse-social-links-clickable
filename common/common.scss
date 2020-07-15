@@ -1,4 +1,4 @@
-.iconic-user-fields {
+ .iconic-user-fields {
   a {
       margin-right: 5px;
   }
@@ -12,6 +12,21 @@
   }
 }
 
+.location-and-website {
+  .website-name {
+      margin-right: 10px;
+  }
+  div {
+      display: inline;
+  }
+  a {
+      text-decoration: underline;
+      color: #222;
+  }
+  span {
+      margin-right: 10px;
+  }
+}
 
 .primary-textual h3 > .ember-view:not(:first-child) {
   margin-left: 10px;
