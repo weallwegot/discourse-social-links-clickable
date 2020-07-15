@@ -7,23 +7,11 @@
       color: #000;
       margin-left: 0;
   }
+  .fa.d-icon.svg-icon.svg-string {
+      margin: 0px;
+  }
 }
 
-.location-and-website {
-  .website-name {
-      margin-right: 10px;
-  }
-  div {
-      display: inline;
-  }
-  a {
-      text-decoration: underline;
-      color: #222;
-  }
-  span {
-      margin-right: 10px;
-  }
-}
 
 .primary-textual h3 > .ember-view:not(:first-child) {
   margin-left: 10px;
