@@ -42,7 +42,7 @@
             var base = field.link.base || ''
             if (field.link.type === 'userField') {
                 var siteUserField = siteUserFields.filterBy('name', field.link.value)[0]
-                if (siteUserField) {
+                if (siteUserField && userFields[siteUserField.get('id')) {
                     Ember.set(field, 'href', base + (userFields[siteUserField.get('id')] || ''))
                 } else {
                     return null
@@ -83,14 +83,6 @@
         {{/if}}
     </script>
     
-    <!-- <script type='text/x-handlebars' data-template-name='/connectors/user-location-and-website/user-card-profile-customization'>
-        {{#if userLocationAndWebsiteUserFields}}
-        {{#each userLocationAndWebsiteUserFields as |lw|}}
-        {{d-icon lw.icon}}
-        <a href={{lw.href}} rel="nofollow" target="_blank" title="{{lw.name}}">{{lw.link_title}}</a>
-        {{/each}}
-        {{/if}}
-    </script> -->
     
     <script type='text/x-handlebars' data-template-name='/connectors/user-card-post-names/user-card-profile-customization'>
         {{#if iconicUserFields}}
@@ -103,14 +95,3 @@
         </div>
         {{/if}}
     </script>
-    
-    <!-- <script type='text/x-handlebars' data-template-name='/connectors/user-card-location-and-website/user-card-profile-customization'>
-        {{#if locationAndWebsiteUserFields}}
-        {{#each locationAndWebsiteUserFields as |lw|}}
-        <span>
-            {{d-icon lw.icon}}
-            <a href={{lw.href}} rel="nofollow" target="_blank" title="{{lw.name}}">{{lw.link_title}}</a>
-        </span>
-        {{/each}}
-        {{/if}}
-    </script> -->
