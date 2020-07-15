@@ -5,11 +5,14 @@
   .fa {
       font-size: 1.2em;
       color: #000;
-      margin-left: 0;
   }
   .fa.d-icon.svg-icon.svg-string {
-      margin: 0px;
+      margin-left: 0px;
   }
+}
+
+.iconic-user-fields {
+  padding-bottom: 2em;
 }
 
 .primary-textual h3 > .ember-view:not(:first-child) {
