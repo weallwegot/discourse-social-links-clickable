@@ -1,0 +1,50 @@
+.iconic-user-fields {
+  a {
+      margin-right: 5px;
+  }
+  .fa {
+      font-size: 1.2em;
+      color: #000;
+      margin-left: 0;
+  }
+}
+
+.location-and-website {
+  .website-name {
+      margin-right: 10px;
+  }
+  div {
+      display: inline;
+  }
+  a {
+      text-decoration: underline;
+      color: #222;
+  }
+  span {
+      margin-right: 10px;
+  }
+}
+
+.primary-textual h3 > .ember-view:not(:first-child) {
+  margin-left: 10px;
+}
+
+.user-location-and-website-outlet.user-card-profile-customization {
+  display: inline;
+}
+
+#user-card {
+  .card-content {
+      padding-top: 31px;
+  }
+  .usercard-controls {
+      margin-top: -19px;
+  }
+  &.no-bg .card-content {
+      padding-top: 12px;
+      margin-top: 19px;
+  }
+  span.ember-view {
+      position: relative !important;
+  }
+}
