@@ -1,0 +1,116 @@
+<script type="text/discourse-plugin" version="0.8.7">
+    var fieldOptions = {}
+    
+    fieldOptions.iconicUserFields = [
+        {
+            name: 'Instagram',
+            icon: 'fab-instagram',
+            link: {
+                type: 'userField',
+                value: settings.instagram_custom_field_name,
+                base: 'https://instagram.com/'
+            }
+        },
+        {
+            name: 'Twitter',
+            icon: 'fab-twitter',
+            link: {
+                type: 'userField',
+                value: settings.twitter_custom_field_name,
+                base: 'https://twitter.com/'
+            }
+        },
+        {
+            name: 'LinkedIn',
+            icon: 'fab-linkedin-in',
+            link: {
+                type: 'userField',
+                value: settings.linkedin_custom_field_name
+            }
+        }
+    ]
+    
+    fieldOptions.userIconicUserFields = fieldOptions.iconicUserFields
+    
+    
+    function parseFieldOptions (component, name) {
+        var model_name = (name.substring(0, 4) === 'user') ? 'model' : 'user'
+        var options = fieldOptions[name]
+        const siteUserFields = component.site.get('user_fields')
+        const userFields = component.get(model_name  + '.user_fields')
+        component.set(name, options.map(field => {
+            var base = field.link.base || ''
+            if (field.link.type === 'userField') {
+                var siteUserField = siteUserFields.filterBy('name', field.link.value)[0]
+                if (siteUserField) {
+                    Ember.set(field, 'href', base + (userFields[siteUserField.get('id')] || ''))
+                } else {
+                    return null
+                }
+            }
+
+            return field.href ? field : null
+        }).compact())
+    }
+    
+    api.registerConnectorClass('user-post-names', 'user-card-profile-customization', {
+        setupComponent(args, component) {
+            parseFieldOptions(component, 'userIconicUserFields')
+        }
+    })
+    
+    api.registerConnectorClass('user-card-post-names', 'user-card-profile-customization', {
+        setupComponent(args, component) {
+            parseFieldOptions(component, 'iconicUserFields')
+        }
+    })
+    
+    
+    api.modifyClass('component:user-card-contents', {
+      hasLocationOrWebsite: true
+    })
+    </script>
+    
+    <script type='text/x-handlebars' data-template-name='/connectors/user-post-names/user-card-profile-customization'>
+        {{#if userIconicUserFields}}
+        <div class="iconic-user-fields">
+            {{#each userIconicUserFields as |ic|}}
+            {{#if ic.icon}}
+            <a href="{{ic.href}}" rel="nofollow" target="_blank" title="{{ic.name}}">{{d-icon ic.icon}}</a>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+    </script>
+    
+    <!-- <script type='text/x-handlebars' data-template-name='/connectors/user-location-and-website/user-card-profile-customization'>
+        {{#if userLocationAndWebsiteUserFields}}
+        {{#each userLocationAndWebsiteUserFields as |lw|}}
+        {{d-icon lw.icon}}
+        <a href={{lw.href}} rel="nofollow" target="_blank" title="{{lw.name}}">{{lw.link_title}}</a>
+        {{/each}}
+        {{/if}}
+    </script> -->
+    
+    <script type='text/x-handlebars' data-template-name='/connectors/user-card-post-names/user-card-profile-customization'>
+        {{#if iconicUserFields}}
+        <div class="iconic-user-fields">
+            {{#each iconicUserFields as |ic|}}
+            {{#if ic.icon}}
+            <a href="{{ic.href}}" rel="nofollow" target="_blank" title="{{ic.name}}">{{d-icon ic.icon}}</a>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{/if}}
+    </script>
+    
+    <!-- <script type='text/x-handlebars' data-template-name='/connectors/user-card-location-and-website/user-card-profile-customization'>
+        {{#if locationAndWebsiteUserFields}}
+        {{#each locationAndWebsiteUserFields as |lw|}}
+        <span>
+            {{d-icon lw.icon}}
+            <a href={{lw.href}} rel="nofollow" target="_blank" title="{{lw.name}}">{{lw.link_title}}</a>
+        </span>
+        {{/each}}
+        {{/if}}
+    </script> -->
