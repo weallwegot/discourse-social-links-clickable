@@ -12,29 +12,10 @@
   }
 }
 
-.location-and-website {
-  .website-name {
-      margin-right: 10px;
-  }
-  div {
-      display: inline;
-  }
-  a {
-      text-decoration: underline;
-      color: #222;
-  }
-  span {
-      margin-right: 10px;
-  }
-}
-
 .primary-textual h3 > .ember-view:not(:first-child) {
   margin-left: 10px;
 }
 
-.user-location-and-website-outlet.user-card-profile-customization {
-  display: inline;
-}
 
 #user-card {
   .card-content {
