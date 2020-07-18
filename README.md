@@ -8,6 +8,7 @@ Heavily Inspired By & Copied From [Namati User Card Profile Theme](https://githu
 
 - Any users that don't include a value for an entry will not have the corresponding icon shown on their user card/profile
 - Instagram & Twitter custom user fields only expect the user names (no "@" included), the name gets appended to the base URL
+- I'd recommend making the Custom User Fields that will have icons *NOT* show on the User Card since it will then feel a bit redundant to have the text & the clickable icons. Just my opinion though, the theme does not automatically hide them.
 
 #### Site Settings
 
