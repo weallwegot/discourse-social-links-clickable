@@ -19,4 +19,5 @@ Strings are case-sensitive.
 instagram_custom_field_name: 'Instagram'
 twitter_custom_field_name: 'Twitter'
 linkedin_custom_field_name: 'LinkedIn Profile'
+youtube_custom_field_name: 'Youtube'
 ```
