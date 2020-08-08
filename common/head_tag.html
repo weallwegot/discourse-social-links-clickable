@@ -8,7 +8,8 @@
             link: {
                 type: 'userField',
                 value: settings.instagram_custom_field_name,
-                base: 'https://instagram.com/'
+                base: 'https://instagram.com/',
+                baseregex: '^http(s)?://(www.)?instagram.com/'
             }
         },
         {
@@ -17,7 +18,8 @@
             link: {
                 type: 'userField',
                 value: settings.twitter_custom_field_name,
-                base: 'https://twitter.com/'
+                base: 'https://twitter.com/',
+                baseregex: '^http(s)?://(www.)?twitter.com/'
             }
         },
         {
@@ -34,7 +36,8 @@
             link: {
                 type: 'userField',
                 value: settings.youtube_custom_field_name,
-                base: 'https://youtube.com/c/'
+                base: 'https://youtube.com/c/',
+                baseregex: '^https(s)?://(www.)?youtube.com/c/'
             }
         },
     ]
@@ -49,10 +52,13 @@
         const userFields = component.get(model_name  + '.user_fields')
         component.set(name, options.map(field => {
             var base = field.link.base || ''
+            var baseregex = field.link.baseregex || ''
             if (field.link.type === 'userField') {
                 var siteUserField = siteUserFields.filterBy('name', field.link.value)[0]
                 if (siteUserField && userFields[siteUserField.get('id')]) {
-                    Ember.set(field, 'href', base + (userFields[siteUserField.get('id')] || ''))
+                    var socialLinkValue = userFields[siteUserField.get('id')];
+                    socialLinkValue = RegExp(baseregex).test(socialLinkValue) ? socialLinkValue : base + socialLinkValue;
+                    Ember.set(field, 'href', socialLinkValue || '')
                 } else {
                     return null
                 }
