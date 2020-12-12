@@ -2,9 +2,10 @@ instagram_custom_field_name: 'Instagram'
 twitter_custom_field_name: 'Twitter'
 linkedin_custom_field_name: 'LinkedIn Profile'
 youtube_custom_field_name: 'Youtube'
+discord_custom_field_name: 'Discord'
 icon_color: 'black'
 
 _icon:
-  default: "user|globe|fab-twitter|fab-facebook-f|fab-linkedin-in|building|fab-instagram|fab-youtube"
+  default: "user|globe|fab-twitter|fab-facebook-f|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord"
   type: list
   description: "setting necessary to load the appropriate icons"
