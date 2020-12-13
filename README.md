@@ -21,4 +21,5 @@ twitter_custom_field_name: 'Twitter'
 linkedin_custom_field_name: 'LinkedIn Profile'
 youtube_custom_field_name: 'Youtube'
 discord_custom_field_name: 'Discord'
+steam_custom_field_name: 'Steam'
 ```
