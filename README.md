@@ -7,8 +7,8 @@ Heavily Inspired By & Copied From [Namati User Card Profile Theme](https://githu
 #### Notes
 
 - Any users that don't include a value for an entry will not have the corresponding icon shown on their user card/profile
-- Instagram & Twitter & Youtube custom user fields only expect the user names (no "@" included), the name gets appended to the base URL, but will try to detect if the user puts in a URL as well. 
-- I'd recommend making the Custom User Fields that will have icons *NOT* show on the User Card since it will then feel a bit redundant to have the text & the clickable icons. Just my opinion though, the theme does not automatically hide them.
+- Instagram & Twitter custom user fields only expect the user names (no "@" included), the name gets appended to the base URL, but will try to detect if the user puts in a URL as well.
+- I'd recommend making the Custom User Fields that will have icons *NOT* show on the User Card since it will then feel a bit redundant to have the text & the clickable icons. Just my personal opinion though, this theme component does not automatically hide them.
 
 #### Site Settings
 
@@ -22,4 +22,9 @@ linkedin_custom_field_name: 'LinkedIn Profile'
 youtube_custom_field_name: 'Youtube'
 discord_custom_field_name: 'Discord'
 steam_custom_field_name: 'Steam'
+twitch_custom_field_name: 'Twitch'
+```
+You can also customize the color of the icons.
+```
+icon_color: 'black'
 ```
