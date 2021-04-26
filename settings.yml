@@ -4,7 +4,7 @@ linkedin_custom_field_name: 'LinkedIn Profile'
 youtube_custom_field_name: 'Youtube'
 discord_custom_field_name: 'Discord'
 steam_custom_field_name: 'Steam'
-twitch_custome_field_name: 'Twitch'
+twitch_custom_field_name: 'Twitch'
 icon_color: 'black'
 
 _icon:
