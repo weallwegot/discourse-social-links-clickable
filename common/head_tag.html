@@ -1,6 +1,6 @@
 <script type="text/discourse-plugin" version="0.8.7">
     var fieldOptions = {}
-    
+
     fieldOptions.iconicUserFields = [
         {
             name: 'Instagram',
@@ -54,11 +54,19 @@
                 value: settings.steam_custom_field_name
             }
         },
+        {
+            name: 'Twitch',
+            icon: 'fab-twitch',
+            link: {
+                type: 'userField',
+                value: settings.twitch_custom_field_name
+            }
+        },
     ]
-    
+
     fieldOptions.userIconicUserFields = fieldOptions.iconicUserFields
-    
-    
+
+
     function parseFieldOptions (component, name) {
         var model_name = (name.substring(0, 4) === 'user') ? 'model' : 'user'
         var options = fieldOptions[name]
@@ -81,25 +89,25 @@
             return field.href ? field : null
         }).compact())
     }
-    
+
     api.registerConnectorClass('user-post-names', 'user-card-profile-customization', {
         setupComponent(args, component) {
             parseFieldOptions(component, 'userIconicUserFields')
         }
     })
-    
+
     api.registerConnectorClass('user-card-post-names', 'user-card-profile-customization', {
         setupComponent(args, component) {
             parseFieldOptions(component, 'iconicUserFields')
         }
     })
-    
-    
+
+
     api.modifyClass('component:user-card-contents', {
       hasLocationOrWebsite: true
     })
     </script>
-    
+
     <script type='text/x-handlebars' data-template-name='/connectors/user-post-names/user-card-profile-customization'>
         {{#if userIconicUserFields}}
         <div class="iconic-user-fields">
@@ -111,8 +119,8 @@
         </div>
         {{/if}}
     </script>
-    
-    
+
+
     <script type='text/x-handlebars' data-template-name='/connectors/user-card-post-names/user-card-profile-customization'>
         {{#if iconicUserFields}}
         <div class="iconic-user-fields">
