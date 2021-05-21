@@ -14,6 +14,12 @@
   margin-left: 10px;
 }
 
+// offset user card flair movement 
+// but should only be applied if the icons are present, otherwise it looks dumb
+.user-card-avatar.avatar-flair {
+ margin-bottom: 1.2em;
+}
+
 
 #user-card {
   .card-content {
