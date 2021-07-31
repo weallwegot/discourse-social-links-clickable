@@ -10,9 +10,6 @@
       margin-left: 0px;
   }
 }
-.primary-textual h3 > .ember-view:not(:first-child) {
-  margin-left: 10px;
-}
 
 
 #user-card {
@@ -25,8 +22,5 @@
   &.no-bg .card-content {
       padding-top: 12px;
       margin-top: 19px;
-  }
-  span.ember-view {
-      position: relative !important;
   }
 }
