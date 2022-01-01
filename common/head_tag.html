@@ -23,6 +23,42 @@
             }
         },
         {
+            name: 'Soundcloud',
+            icon: 'fab-soundcloud',
+            link: {
+                type: 'userField',
+                value: settings.soundcloud_custom_field_name,
+                base: 'https://soundcloud.com/',
+                baseregex: '^http(s)?://(www.)?soundcloud.com/'
+            }
+        },
+        {
+            name: 'Spotify',
+            icon: 'fab-spotify',
+            link: {
+                type: 'userField',
+                value: settings.spotify_custom_field_name,
+                base: 'https://open.spotify.com/artist/',
+                baseregex: '^http(s)?://(www.)?open.spotify.com/artist/'
+            }
+        },
+        {
+            name: 'Bandcamp',
+            icon: 'fab-bandcamp',
+            link: {
+                type: 'userField',
+                value: settings.bandcamp_custom_field_name
+            }
+        },
+        {
+            name: 'Email',
+            icon: 'fa-envelope-square',
+            link: {
+                type: 'userField',
+                value: settings.email_custom_field_name
+            }
+        },
+        {
             name: 'LinkedIn',
             icon: 'fab-linkedin-in',
             link: {
@@ -60,6 +96,26 @@
             link: {
                 type: 'userField',
                 value: settings.twitch_custom_field_name
+            }
+        },
+        {
+            name: 'Tiktok',
+            icon: 'fab-tiktok',
+            link: {
+                type: 'userField',
+                value: settings.tiktok_custom_field_name,
+                base: 'https://tiktok.com/',
+                baseregex: '^http(s)?://(www.)?tiktok.com/'
+            }
+        },
+        {
+            name: 'Telegram',
+            icon: 'fab-telegram',
+            link: {
+                type: 'userField',
+                value: settings.telegram_custom_field_name,
+                base: 'https://t.me/',
+                baseregex: '^http(s)?://(www.)?t.me/'
             }
         },
     ]

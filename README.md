@@ -23,6 +23,12 @@ youtube_custom_field_name: 'Youtube'
 discord_custom_field_name: 'Discord'
 steam_custom_field_name: 'Steam'
 twitch_custom_field_name: 'Twitch'
+soundcloud_custom_field_name: 'Soundcloud'
+spotify_custom_field_name: 'Spotify'
+bandcamp_custom_field_name: 'Bandcamp'
+email_custom_field_name: 'Email'
+tiktok_custom_field_name: 'Tiktok'
+telegram_custom_field_name: 'Telegram'
 ```
 You can also customize the color of the icons.
 ```

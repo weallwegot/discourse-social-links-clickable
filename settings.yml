@@ -5,9 +5,15 @@ youtube_custom_field_name: 'Youtube'
 discord_custom_field_name: 'Discord'
 steam_custom_field_name: 'Steam'
 twitch_custom_field_name: 'Twitch'
+soundcloud_custom_field_name: 'Soundcloud'
+spotify_custom_field_name: 'Spotify'
+bandcamp_custom_field_name: 'Bandcamp'
+email_custom_field_name: 'Email'
+tiktok_custom_field_name: 'Tiktok'
+telegram_custom_field_name: 'Telegram'
 icon_color: 'black'
 
 _icon:
-  default: "user|globe|fab-twitter|fab-facebook-f|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord|fab-steam|fab-twitch"
+  default: "user|globe|fab-twitter|fab-facebook-f|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|fa-envelope-square|fab-tiktok|fab-telegram"
   type: list
   description: "setting necessary to load the appropriate icons"
