@@ -34,3 +34,7 @@ You can also customize the color of the icons.
 ```
 icon_color: 'black'
 ```
+
+### Known Issues
+
+[Tiktok font awesome icon is not rendering.](https://meta.discourse.org/t/easy-responsive-footer/95818/132)
