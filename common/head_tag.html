@@ -3,12 +3,22 @@
 
     fieldOptions.iconicUserFields = [
         {
+            name: 'Facebook',
+            icon: 'fab-facebook',
+            link: {
+                type: 'userField',
+                value: settings.facebook_custom_field_name,
+                base: 'https://www.facebook.com/',
+                baseregex: '^http(s)?://(www.)?facebook.com/'
+            }
+        },
+        {
             name: 'Instagram',
             icon: 'fab-instagram',
             link: {
                 type: 'userField',
                 value: settings.instagram_custom_field_name,
-                base: 'https://instagram.com/',
+                base: 'https://www.instagram.com/',
                 baseregex: '^http(s)?://(www.)?instagram.com/'
             }
         },
