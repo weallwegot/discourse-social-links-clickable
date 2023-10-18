@@ -138,6 +138,12 @@
         var options = fieldOptions[name]
         const siteUserFields = component.site.get('user_fields')
         const userFields = component.get(model_name  + '.user_fields')
+
+        // User's profile is hidden
+        if (userFields === undefined) {
+            return
+        }
+
         component.set(name, options.map(field => {
             var base = field.link.base || ''
             var baseregex = field.link.baseregex || ''
