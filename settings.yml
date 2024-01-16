@@ -15,6 +15,6 @@ telegram_custom_field_name: 'Telegram'
 icon_color: 'black'
 
 _icon:
-  default: "user|globe|fab-twitter|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram"
+  default: "user|globe|temporary-twitter-x|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram"
   type: list
   description: "setting necessary to load the appropriate icons"
