@@ -115,6 +115,13 @@ export default class SocialLinksClickable extends Service {
           baseregex: "^(https://)?t.me/",
         },
       },
+      {
+        name: "Mastodon",
+        icon: "fab-mastodon",
+        link: {
+          value: settings.mastodon_custom_field_name,
+        },
+      },
     ];
   }
 
