@@ -18,6 +18,7 @@ Strings are case-sensitive.
 ```
 facebook_custom_field_name: 'Facebook'
 instagram_custom_field_name: 'Instagram'
+threads_custom_field_name: 'Threads'
 twitter_custom_field_name: 'Twitter'
 linkedin_custom_field_name: 'LinkedIn Profile'
 youtube_custom_field_name: 'Youtube'

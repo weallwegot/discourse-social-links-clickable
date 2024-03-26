@@ -1,5 +1,6 @@
 facebook_custom_field_name: "Facebook"
 instagram_custom_field_name: "Instagram"
+threads_custom_field_name: "Threads"
 twitter_custom_field_name: "Twitter"
 linkedin_custom_field_name: "LinkedIn Profile"
 youtube_custom_field_name: "Youtube"
@@ -16,6 +17,6 @@ mastodon_custom_field_name: "Mastodon"
 icon_color: "black"
 
 _icon:
-  default: "user|globe|temporary-twitter-x|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon"
+  default: "user|globe|fab-twitter|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-threads|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon"
   type: list
   description: "setting necessary to load the appropriate icons"
