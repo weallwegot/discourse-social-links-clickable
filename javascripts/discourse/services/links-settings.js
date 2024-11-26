@@ -132,24 +132,6 @@ export default class SocialLinksClickable extends Service {
           value: settings.bandcamp_custom_field_name,
         },
       },
-      {
-        name: "Bluesky",
-        icon: "fab-bluesky",
-        link: {
-          value: settings.bluesky_custom_field_name,
-          base: "https://bsky.app/profile/",
-          baseregex: "^http(s)?://(www.)?bsky.app/profile/",
-        },
-      },
-      {
-        name: "Github",
-        icon: "fab-github",
-        link: {
-          value: settings.github_custom_field_name,
-          base: "https://github.com/",
-          baseregex: "^http(s)?://(www.)?github.com/",
-        },
-      },
     ];
   }
 
