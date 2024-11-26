@@ -2,7 +2,6 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-    const settings = this.settings || {};
     return [
       {
         name: "Email",
@@ -136,12 +135,11 @@ export default class SocialLinksClickable extends Service {
   }
 
   fieldOptions(model) {
-    if (!model || !model.site || !model.site.user_fields) {
-      console.error("Invalid model or missing site user fields");
+    const userFields = model?.user_fields;
+
+    if (userFields === undefined) {
       return null;
     }
-
-    const userFields = model?.user_fields;
 
     return this.defaultSettings
       .map((field) => {
@@ -165,6 +163,6 @@ export default class SocialLinksClickable extends Service {
 
         return field;
       })
-      .filter(Boolean);
+      .compact();
   }
 }
