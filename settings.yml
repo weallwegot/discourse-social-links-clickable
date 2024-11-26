@@ -14,9 +14,11 @@ email_custom_field_name: "Email"
 tiktok_custom_field_name: "Tiktok"
 telegram_custom_field_name: "Telegram"
 mastodon_custom_field_name: "Mastodon"
+bluesky_custom_field_name: "Bluesky"
+github_custom_field_name: "Github"
 icon_color: "black"
 
 _icon:
-  default: "user|globe|fab-twitter|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-threads|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon"
+  default: "user|globe|fab-twitter|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-threads|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon|fab-bluesky|fab-github"
   type: list
   description: "setting necessary to load the appropriate icons"
