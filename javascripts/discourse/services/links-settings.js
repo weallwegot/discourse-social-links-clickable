@@ -2,7 +2,7 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-    return [
+      return [
       {
         name: "Email",
         icon: "envelope",
