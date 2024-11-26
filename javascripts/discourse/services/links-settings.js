@@ -2,6 +2,7 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
+    const settings = this.settings || {};
     return [
       {
         name: "Email",
@@ -130,6 +131,7 @@ export default class SocialLinksClickable extends Service {
         link: {
           value: settings.bandcamp_custom_field_name,
         },
+      },
       {
         name: "Bluesky",
         icon: "fab-bluesky",
@@ -138,6 +140,7 @@ export default class SocialLinksClickable extends Service {
           base: "https://bsky.app/profile/",
           baseregex: "^http(s)?://(www.)?bsky.app/profile/",
         },
+      },
       {
         name: "Github",
         icon: "fab-github",
@@ -151,11 +154,12 @@ export default class SocialLinksClickable extends Service {
   }
 
   fieldOptions(model) {
-    const userFields = model?.user_fields;
-
-    if (userFields === undefined) {
+    if (!model || !model.site || !model.site.user_fields) {
+      console.error("Invalid model or missing site user fields");
       return null;
     }
+
+    const userFields = model?.user_fields;
 
     return this.defaultSettings
       .map((field) => {
@@ -179,6 +183,6 @@ export default class SocialLinksClickable extends Service {
 
         return field;
       })
-      .compact();
+      .filter(Boolean);
   }
 }
