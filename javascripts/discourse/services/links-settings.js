@@ -2,7 +2,7 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-      return [
+        return [
       {
         name: "Email",
         icon: "envelope",
@@ -129,6 +129,24 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-bandcamp",
         link: {
           value: settings.bandcamp_custom_field_name,
+        },
+      },
+      {
+        name: "Bluesky",
+        icon: "fab-bluesky",
+        link: {
+          value: settings.bluesky_custom_field_name,
+          base: "https://bsky.app/profile/",
+          baseregex: "^http(s)?://(www.)?bsky.app/profile/",
+        },
+      },
+      {
+        name: "Github",
+        icon: "fab-github",
+        link: {
+          value: settings.github_custom_field_name,
+          base: "https://github.com/",
+          baseregex: "^http(s)?://(www.)?github.com/",
         },
       },
     ];
