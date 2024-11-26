@@ -2,8 +2,6 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-    // Ensure `settings` is available (import or define globally)
-    const settings = this.settings || {};
     return [
       {
         name: "Email",
@@ -137,40 +135,34 @@ export default class SocialLinksClickable extends Service {
   }
 
   fieldOptions(model) {
-    // Handle undefined or invalid model
-    if (!model || !model.user_fields || !model.site || !model.site.user_fields) {
-      console.error("Invalid model or missing user fields");
-      return [];
+    const userFields = model?.user_fields;
+
+    if (userFields === undefined) {
+      return null;
     }
 
-    const userFields = model.user_fields;
-
-    // Map default settings to user-specific fields
     return this.defaultSettings
       .map((field) => {
         const base = field.link.base || "";
         const baseregex = field.link.baseregex || "";
 
-        const siteUserField = model.site.user_fields.find(
-          (userField) => userField.name === field.link.value
-        );
+        const siteUserField = model.site?.user_fields.filterBy(
+          "name",
+          field.link.value
+        )[0];
 
-        // Skip if no matching user field
-        if (!siteUserField || !userFields[siteUserField.id]) {
+        if (siteUserField && userFields[siteUserField.id]) {
+          const socialLinkValue = userFields[siteUserField.id];
+          field.href =
+            (RegExp(baseregex).test(socialLinkValue)
+              ? socialLinkValue
+              : base + socialLinkValue) || "";
+        } else {
           return null;
         }
 
-        const socialLinkValue = userFields[siteUserField.id];
-        const href = RegExp(baseregex).test(socialLinkValue)
-          ? socialLinkValue
-          : base + socialLinkValue;
-
-        // Return a new field object with computed href
-        return {
-          ...field,
-          href: href || "",
-        };
+        return field;
       })
-      .filter(Boolean); // Replace compact() with filter(Boolean)
+      .compact();
   }
 }
