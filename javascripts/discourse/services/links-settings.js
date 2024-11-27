@@ -2,7 +2,7 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-    return [
+        return [
       {
         name: "Email",
         icon: "envelope",
@@ -58,8 +58,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-tiktok",
         link: {
           value: settings.tiktok_custom_field_name,
-          base: "https://tiktok.com/",
-          baseregex: "^http(s)?://(www.)?tiktok.com/",
+          base: "https://tiktok.com/@",
+          baseregex: "^http(s)?://(www.)?tiktok.com/@",
         },
       },
       {
@@ -81,6 +81,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-youtube",
         link: {
           value: settings.youtube_custom_field_name,
+          base: "https://youtube.com/@",
+          baseregex: "^http(s)?://(www.)?youtube.com/@", 
         },
       },
       {
@@ -88,6 +90,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-twitch",
         link: {
           value: settings.twitch_custom_field_name,
+          base: "https://www.twitch.tv/",
+          baseregex: "^http(s)?://(www.)?twitch.tv/", 
         },
       },
       {
@@ -131,6 +135,33 @@ export default class SocialLinksClickable extends Service {
           value: settings.bandcamp_custom_field_name,
         },
       },
+      {
+        name: "Bluesky",
+        icon: "fab-bluesky",
+        link: {
+          value: settings.bluesky_custom_field_name,
+          base: "https://bsky.app/profile/",
+          baseregex: "^http(s)?://(www.)?bsky.app/profile/",
+        },
+      },
+      {
+        name: "Github",
+        icon: "fab-github",
+        link: {
+          value: settings.github_custom_field_name,
+          base: "https://github.com/",
+          baseregex: "^http(s)?://(www.)?github.com/",
+        },
+      },
+     {
+        name: "Strava",
+        icon: "fab-strava",
+        link: {
+          value: settings.strava_custom_field_name,
+          base: "https://strava.com/athletes/",
+          baseregex: "^http(s)?://(www.)strava.com/athletes/",
+        },
+      },   
     ];
   }
 
