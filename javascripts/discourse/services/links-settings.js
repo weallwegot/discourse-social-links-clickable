@@ -59,7 +59,7 @@ export default class SocialLinksClickable extends Service {
         link: {
           value: settings.tiktok_custom_field_name,
           base: "https://tiktok.com/",
-          baseregex: "^http(s)?://(www.)?tiktok.com/",
+          baseregex: "^http(s)?://(www.)?tiktok.com/@",
         },
       },
       {
@@ -81,6 +81,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-youtube",
         link: {
           value: settings.youtube_custom_field_name,
+          base: "https://youtube.com/",
+          baseregex: "^http(s)?://(www.)?youtube.com/@", 
         },
       },
       {
@@ -88,6 +90,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-twitch",
         link: {
           value: settings.twitch_custom_field_name,
+          base: "https://www.twitch.tv/",
+          baseregex: "^http(s)?://(www.)?twitch.tv/", 
         },
       },
       {
