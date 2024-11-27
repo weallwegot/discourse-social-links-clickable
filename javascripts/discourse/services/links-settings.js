@@ -59,7 +59,7 @@ export default class SocialLinksClickable extends Service {
         link: {
           value: settings.tiktok_custom_field_name,
           base: "https://tiktok.com/",
-          baseregex: "^http(s)?://(www.)?tiktok.com/@",
+          baseregex: "^http(s)?://(www\.)?tiktok\.com/(?!@)(.*)$",
         },
       },
       {
