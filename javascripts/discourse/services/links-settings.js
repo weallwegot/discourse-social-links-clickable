@@ -152,6 +152,7 @@ export default class SocialLinksClickable extends Service {
           base: "https://github.com/",
           baseregex: "^http(s)?://(www.)?github.com/",
         },
+      },
       {
         name: "Strava",
         icon: "fab-strava",
@@ -160,7 +161,6 @@ export default class SocialLinksClickable extends Service {
           base: "https://strava.com/athletes/",
           baseregex: "^http(s)?://(www.)?strava.com/athletes/",
         },
-      },
     ];
   }
 
