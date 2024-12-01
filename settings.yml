@@ -20,6 +20,6 @@ x_custom_field_name: "X"
 icon_color: "black"
 
 _icon:
-  default: "user|globe|fab-x-twitter|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-threads|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon|fab-bluesky|fab-github|fab-strava"
+  default: "user|globe|fab-temporary-twitter-x|fab-facebook|fab-linkedin-in|building|fab-instagram|fab-threads|fab-youtube|fab-discord|fab-steam|fab-twitch|fab-bandcamp|fab-spotify|fab-soundcloud|envelope|fab-tiktok|fab-telegram|fab-mastodon|fab-bluesky|fab-github|fab-strava"
   type: list
   description: "setting necessary to load the appropriate icons"
