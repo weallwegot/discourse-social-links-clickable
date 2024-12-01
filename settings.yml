@@ -16,7 +16,7 @@ telegram_custom_field_name: "Telegram"
 mastodon_custom_field_name: "Mastodon"
 github_custom_field_name: "Github"
 strava_custom_field_name: "Strava"
-x_custom_field_name: "X"
+twitter_custom_field_name: "X"
 icon_color: "black"
 
 _icon:
