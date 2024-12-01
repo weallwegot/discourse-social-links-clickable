@@ -39,7 +39,7 @@ export default class SocialLinksClickable extends Service {
       },
       {
         name: "X",
-        icon: "fa-x-twitter",
+        icon: "fa-temporary-twitter-x",
         link: {
           value: settings.x_custom_field_name,
           base: "https://x.com/",
