@@ -41,7 +41,7 @@ export default class SocialLinksClickable extends Service {
         name: "X",
         icon: "fab-x-twitter",
         link: {
-          value: settings.X_custom_field_name,
+          value: settings.x_custom_field_name,
           base: "https://x.com/",
           baseregex: "^http(s)?://(www.)?x.com/",
         },
