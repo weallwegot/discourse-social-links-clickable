@@ -38,7 +38,7 @@ export default class SocialLinksClickable extends Service {
         },
       },
       {
-        name: "Twitter",
+        name: "X",
         icon: "fab-x-twitter",
         link: {
           value: settings.twitter_custom_field_name,
