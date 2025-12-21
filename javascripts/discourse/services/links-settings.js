@@ -52,6 +52,7 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-mastodon",
         link: {
           value: settings.mastodon_custom_field_name,
+          base: "",
         },
       },
       {
@@ -68,6 +69,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-discord",
         link: {
           value: settings.discord_custom_field_name,
+          base: "https://discord.com/users/",
+          baseregex: "^http(s)?://(www.)?discord.com/users/",
         },
       },
       {
@@ -138,6 +141,7 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-bandcamp",
         link: {
           value: settings.bandcamp_custom_field_name,
+          base: "",
         },
       },
       {
