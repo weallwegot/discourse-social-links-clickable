@@ -8,6 +8,7 @@ export default class SocialLinksClickable extends Service {
         icon: "envelope",
         link: {
           value: settings.email_custom_field_name,
+          base: "mailto:",
         },
       },
       {
@@ -74,6 +75,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-steam",
         link: {
           value: settings.steam_custom_field_name,
+          base: "https://steamcommunity.com/id/",
+          baseregex: "^http(s)?://(www.)?steamcommunity.com/id/",
         },
       },
       {
@@ -108,6 +111,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-linkedin-in",
         link: {
           value: settings.linkedin_custom_field_name,
+          base: "https://linkedin.com/in/",
+          baseregex: "^http(s)?://(www.)?linkedin.com/in/",
         },
       },
       {
