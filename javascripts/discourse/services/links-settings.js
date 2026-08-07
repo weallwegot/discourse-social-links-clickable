@@ -2,7 +2,7 @@ import Service from "@ember/service";
 
 export default class SocialLinksClickable extends Service {
   get defaultSettings() {
-        return [
+    return [
       {
         name: "Email",
         icon: "envelope",
@@ -39,11 +39,11 @@ export default class SocialLinksClickable extends Service {
       },
       {
         name: "X",
-        icon: "fab-x-twitter",
+        icon: "fab-twitter",
         link: {
           value: settings.twitter_custom_field_name,
-          base: "https://x.com/",
-          baseregex: "^http(s)?://(www.)?x.com/",
+          base: "https://twitter.com/",
+          baseregex: "^http(s)?://(www.)?twitter.com/",
         },
       },
       {
@@ -82,7 +82,7 @@ export default class SocialLinksClickable extends Service {
         link: {
           value: settings.youtube_custom_field_name,
           base: "https://youtube.com/@",
-          baseregex: "^http(s)?://(www.)?youtube.com/@", 
+          baseregex: "^http(s)?://(www.)?youtube.com/@",
         },
       },
       {
@@ -91,7 +91,7 @@ export default class SocialLinksClickable extends Service {
         link: {
           value: settings.twitch_custom_field_name,
           base: "https://www.twitch.tv/",
-          baseregex: "^http(s)?://(www.)?twitch.tv/", 
+          baseregex: "^http(s)?://(www.)?twitch.tv/",
         },
       },
       {
@@ -153,7 +153,7 @@ export default class SocialLinksClickable extends Service {
           baseregex: "^http(s)?://(www.)?github.com/",
         },
       },
-     {
+      {
         name: "Strava",
         icon: "fab-strava",
         link: {
@@ -161,7 +161,7 @@ export default class SocialLinksClickable extends Service {
           base: "https://strava.com/athletes/",
           baseregex: "^http(s)?://(www.)strava.com/athletes/",
         },
-      },   
+      },
     ];
   }
 
@@ -177,10 +177,10 @@ export default class SocialLinksClickable extends Service {
         const base = field.link.base || "";
         const baseregex = field.link.baseregex || "";
 
-        const siteUserField = model.site?.user_fields.filterBy(
-          "name",
-          field.link.value
-        )[0];
+        // Fixed: native .find() instead of deprecated .filterBy(...)[0]
+        const siteUserField = model.site?.user_fields.find(
+          (f) => f.name === field.link.value
+        );
 
         if (siteUserField && userFields[siteUserField.id]) {
           const socialLinkValue = userFields[siteUserField.id];
@@ -194,6 +194,7 @@ export default class SocialLinksClickable extends Service {
 
         return field;
       })
-      .compact();
+      // Fixed: native .filter() instead of deprecated .compact()
+      .filter((field) => field != null);
   }
 }
