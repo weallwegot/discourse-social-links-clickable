@@ -41,15 +41,6 @@ export default class SocialLinksClickable extends Service {
         name: "X",
         icon: "fab-x-twitter",
         link: {
-          value: settings.x_custom_field_name,
-          base: "https://x.com/",
-          baseregex: "^http(s)?://(www.)?x.com/",
-        },
-      },
-      {
-        name: "Twitter",
-        icon: "fab-x-twitter",
-        link: {
           value: settings.twitter_custom_field_name,
           base: "https://x.com/",
           baseregex: "^http(s)?://(www.)?x.com/",
@@ -186,10 +177,10 @@ export default class SocialLinksClickable extends Service {
         const base = field.link.base || "";
         const baseregex = field.link.baseregex || "";
 
-        const siteUserField = model.site?.user_fields.filterBy(
-          "name",
-          field.link.value
-        )[0];
+        // Fixed: native .find() instead of deprecated .filterBy(...)[0]
+        const siteUserField = model.site?.user_fields.find(
+          (f) => f.name === field.link.value
+        );
 
         if (siteUserField && userFields[siteUserField.id]) {
           const socialLinkValue = userFields[siteUserField.id];
@@ -203,6 +194,7 @@ export default class SocialLinksClickable extends Service {
 
         return field;
       })
-      .compact();
+      // Fixed: native .filter() instead of deprecated .compact()
+      .filter((field) => field != null);
   }
 }
