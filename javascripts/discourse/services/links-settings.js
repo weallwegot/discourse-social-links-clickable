@@ -177,10 +177,10 @@ export default class SocialLinksClickable extends Service {
         const base = field.link.base || "";
         const baseregex = field.link.baseregex || "";
 
-        const siteUserField = model.site?.user_fields.filterBy(
-          "name",
-          field.link.value
-        )[0];
+        // Fixed: native .find() instead of deprecated .filterBy(...)[0]
+        const siteUserField = model.site?.user_fields.find(
+          (f) => f.name === field.link.value
+        );
 
         if (siteUserField && userFields[siteUserField.id]) {
           const socialLinkValue = userFields[siteUserField.id];
@@ -194,6 +194,7 @@ export default class SocialLinksClickable extends Service {
 
         return field;
       })
-      .compact();
+      // Fixed: native .filter() instead of deprecated .compact()
+      .filter((field) => field != null);
   }
 }
