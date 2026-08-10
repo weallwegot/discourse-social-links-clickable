@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
-import icon from "discourse-common/helpers/d-icon"; // Assuming this helper is valid.
+import { service } from "@ember/service";
+import icon from "discourse/helpers/d-icon";
 
 export default class SocialLinksClickable extends Component {
   @service linksSettings;
@@ -14,8 +14,6 @@ export default class SocialLinksClickable extends Component {
     // Get field options and fallback to an empty array if null or undefined.
     return this.linksSettings.fieldOptions(this.userModel) || [];
   }
-
-
 
   <template>
     <div class="iconic-user-fields">
