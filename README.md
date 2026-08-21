@@ -8,6 +8,8 @@ Heavily Inspired By & Copied From [Namati User Card Profile Theme](https://githu
 
 - Any users that don't include a value for an entry will not have the corresponding icon shown on their user card/profile
 - Facebook, Instagram & Twitter custom user fields only expect the user names (no "@" included), the name gets appended to the base URL, but will try to detect if the user puts in a URL as well.
+- Discord custom user fields expect the user's User ID.
+- Bandcamp and Mastodon custom user fields expect the URL for the user's profile.
 - I'd recommend making the Custom User Fields that will have icons *NOT* show on the User Card since it will then feel a bit redundant to have the text & the clickable icons. Just my personal opinion though, this theme component does not automatically hide them.
 
 #### Site Settings

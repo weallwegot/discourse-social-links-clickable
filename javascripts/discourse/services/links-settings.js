@@ -8,6 +8,7 @@ export default class SocialLinksClickable extends Service {
         icon: "envelope",
         link: {
           value: settings.email_custom_field_name,
+          base: "mailto:",
         },
       },
       {
@@ -51,6 +52,7 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-mastodon",
         link: {
           value: settings.mastodon_custom_field_name,
+          base: "",
         },
       },
       {
@@ -67,6 +69,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-discord",
         link: {
           value: settings.discord_custom_field_name,
+          base: "https://discord.com/users/",
+          baseregex: "^http(s)?://(www.)?discord.com/users/",
         },
       },
       {
@@ -74,6 +78,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-steam",
         link: {
           value: settings.steam_custom_field_name,
+          base: "https://steamcommunity.com/id/",
+          baseregex: "^http(s)?://(www.)?steamcommunity.com/id/",
         },
       },
       {
@@ -108,6 +114,8 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-linkedin-in",
         link: {
           value: settings.linkedin_custom_field_name,
+          base: "https://linkedin.com/in/",
+          baseregex: "^http(s)?://(www.)?linkedin.com/in/",
         },
       },
       {
@@ -133,6 +141,7 @@ export default class SocialLinksClickable extends Service {
         icon: "fab-bandcamp",
         link: {
           value: settings.bandcamp_custom_field_name,
+          base: "",
         },
       },
       {
